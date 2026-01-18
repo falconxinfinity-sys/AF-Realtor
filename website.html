@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amor Fati Realtor | Digital Card</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --navy: #1A365D;
+            --whatsapp: #25D366;
+            --text-gray: #4A4A4A;
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            background: white;
+            max-width: 400px;
+            width: 90%;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        .header {
+            background: var(--navy);
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .logo { font-size: 2.2em; font-weight: 800; color: var(--gold); margin: 0; }
+        .tagline { font-size: 0.9em; opacity: 0.8; letter-spacing: 1px; margin-top: 5px; }
+
+        .action-area { padding: 20px; }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-call { background: var(--navy); color: white; }
+        .btn-wa { background: var(--whatsapp); color: white; }
+        .btn-outline { border: 2px solid var(--gold); color: var(--navy); }
+
+        .listings-section { padding: 0 20px; text-align: left; }
+        .listings-header { border-bottom: 2px solid var(--gold); display: inline-block; margin-bottom: 15px; font-size: 1.1em; }
+
+        .scroll-container {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+
+        .card {
+            min-width: 220px;
+            background: #fff;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .card img { width: 100%; height: 120px; object-fit: cover; }
+        .card-content { padding: 12px; }
+        .price { color: var(--gold); font-weight: bold; font-size: 1.1em; }
+        .loc { font-size: 0.8em; color: var(--text-gray); margin-bottom: 10px; }
+        .inquiry-link { font-size: 0.8em; font-weight: bold; color: var(--navy); text-decoration: none; border: 1px solid var(--navy); padding: 5px 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1 class="logo">Amor Fati</h1>
+        <p class="tagline">LOVE YOUR FATE, FIND YOUR PLACE</p>
+    </div>
+
+    <div class="action-area">
+        <a href="tel:+91XXXXXXXXXX" class="btn btn-call">📞 Call Now</a>
+        <a href="https://wa.me/91XXXXXXXXXX?text=Hello!%20I'm%20interested%20in%20your%20properties." class="btn btn-wa">💬 WhatsApp Chat</a>
+        <a href="#" class="btn btn-outline">💾 Save Contact</a>
+        <a href="https://instagram.com" class="btn btn-outline">📱 Instagram</a>
+    </div>
+
+    <div class="listings-section">
+        <h3 class="listings-header">Featured Properties</h3>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400" alt="House">
+                <div class="card-content">
+                    <div class="price">₹4.5 Cr</div>
+                    <div class="loc">Premium Villa, Mumbai</div>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Details%20on%20Mumbai%20Villa" class="inquiry-link">Inquire →</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400" alt="House">
+                <div class="card-content">
+                    <div class="price">₹1.2 Cr</div>
+                    <div class="loc">Modern Flat, Pune</div>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Details%20on%20Pune%20Flat" class="inquiry-link">Inquire →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
