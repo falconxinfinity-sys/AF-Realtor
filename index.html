@@ -3,126 +3,586 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amor Fati Realtor | Digital Card</title>
+    <title>AF Realtor - Raghav | Premium Properties Across North India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #D4AF37;
-            --navy: #1A365D;
-            --whatsapp: #25D366;
-            --text-gray: #4A4A4A;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            margin: 0; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
+            font-family: 'Montserrat', sans-serif; 
+            background: #FAFAF8; 
+            color: #2C2C2C; 
+            line-height: 1.7; 
+            overflow-x: hidden;
         }
-
-        .container {
-            background: white;
-            max-width: 400px;
-            width: 90%;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
+        
+        /* Header & Navigation */
+        .top-bar {
+            background: #1A1A1A;
+            color: #D4AF37;
+            padding: 12px 0;
             text-align: center;
-            padding-bottom: 30px;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
         }
-
-        .header {
-            background: var(--navy);
-            padding: 40px 20px;
+        .top-bar a {
+            color: #D4AF37;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .top-bar a:hover { color: #FFD700; }
+        
+        header {
+            background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 50%, #1E3A5F 100%);
+            color: #FFFFFF;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231E3A5F" width="1200" height="600"/><path fill="%23D4AF37" opacity="0.1" d="M0 300L50 280L100 320L150 290L200 310L250 285L300 315L350 295L400 325L450 300L500 330L550 305L600 335L650 310L700 340L750 315L800 345L850 320L900 350L950 325L1000 355L1050 330L1100 360L1150 335L1200 365V600H0Z"/></svg>') center/cover;
+        }
+        
+        .logo-section {
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+        .af-logo {
+            color: #D4AF37;
+            font-size: 1.2em;
+            letter-spacing: 8px;
+        }
+        .tagline {
+            font-size: 1.4em;
+            font-weight: 300;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            opacity: 0.95;
+        }
+        .location-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            border: 2px solid #D4AF37;
+            padding: 8px 25px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-size: 0.95em;
+            letter-spacing: 1px;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        /* About Section */
+        .about-section {
+            background: white;
+            margin: -50px auto 60px;
+            max-width: 1100px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 60px 50px;
+            position: relative;
+            z-index: 3;
+        }
+        .about-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A5F;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            font-size: 1.05em;
+            color: #4A4A4A;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .highlight { color: #D4AF37; font-weight: 600; }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%);
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .stat-item {
             color: white;
         }
-
-        .logo { font-size: 2.2em; font-weight: 800; color: var(--gold); margin: 0; }
-        .tagline { font-size: 0.9em; opacity: 0.8; letter-spacing: 1px; margin-top: 5px; }
-
-        .action-area { padding: 20px; }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px;
-            margin-bottom: 12px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            color: #D4AF37;
+            font-weight: 700;
+            display: block;
         }
-
-        .btn-call { background: var(--navy); color: white; }
-        .btn-wa { background: var(--whatsapp); color: white; }
-        .btn-outline { border: 2px solid var(--gold); color: var(--navy); }
-
-        .listings-section { padding: 0 20px; text-align: left; }
-        .listings-header { border-bottom: 2px solid var(--gold); display: inline-block; margin-bottom: 15px; font-size: 1.1em; }
-
-        .scroll-container {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-            scrollbar-width: none;
+        .stat-label {
+            font-size: 1.1em;
+            margin-top: 10px;
+            opacity: 0.9;
         }
-
-        .card {
-            min-width: 220px;
-            background: #fff;
-            border-radius: 15px;
-            border: 1px solid #eee;
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 2.8em;
+            color: #1E3A5F;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #D4AF37;
+            margin: 20px auto 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: #FAFAF8;
+            border: 2px solid #E8E8E8;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
             overflow: hidden;
         }
-
-        .card img { width: 100%; height: 120px; object-fit: cover; }
-        .card-content { padding: 12px; }
-        .price { color: var(--gold); font-weight: bold; font-size: 1.1em; }
-        .loc { font-size: 0.8em; color: var(--text-gray); margin-bottom: 10px; }
-        .inquiry-link { font-size: 0.8em; font-weight: bold; color: var(--navy); text-decoration: none; border: 1px solid var(--navy); padding: 5px 10px; border-radius: 5px; }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #D4AF37 0%, #FFD700 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(30, 58, 95, 0.15);
+            border-color: #D4AF37;
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A5F;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: #5A5A5A;
+            line-height: 1.7;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #F5F5F3 0%, #E8E6E0 100%);
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .value-card {
+            background: white;
+            border-left: 5px solid #D4AF37;
+            padding: 35px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        .value-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #1E3A5F;
+            font-size: 1.4em;
+            margin-bottom: 12px;
+        }
+        .value-card p {
+            color: #5A5A5A;
+            line-height: 1.7;
+        }
+        
+        /* Coverage Section */
+        .coverage-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+        .city-badge {
+            background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%);
+            color: white;
+            padding: 25px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 500;
+            box-shadow: 0 8px 20px rgba(30, 58, 95, 0.2);
+            transition: all 0.3s ease;
+        }
+        .city-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(30, 58, 95, 0.3);
+            background: linear-gradient(135deg, #2C5282 0%, #1E3A5F 100%);
+        }
+        .city-badge::before {
+            content: '📍';
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%);
+            color: white;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 35px;
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5em;
+            color: #D4AF37;
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: #D4AF37;
+        }
+        .testimonial-location {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+            padding: 70px 20px;
+            text-align: center;
+            margin: 60px 0 0;
+        }
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            color: #1E3A5F;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 1.2em;
+            color: #2C2C2C;
+            margin-bottom: 35px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        .btn-primary {
+            background: #1E3A5F;
+            color: white;
+            box-shadow: 0 10px 25px rgba(30, 58, 95, 0.3);
+        }
+        .btn-primary:hover {
+            background: #2C5282;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(30, 58, 95, 0.4);
+        }
+        .btn-secondary {
+            background: white;
+            color: #1E3A5F;
+            border: 2px solid #1E3A5F;
+        }
+        .btn-secondary:hover {
+            background: #1E3A5F;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1A1A1A;
+            color: #B8B8B8;
+            padding: 50px 20px 30px;
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        .footer-section h3 {
+            color: #D4AF37;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+        .footer-section p,
+        .footer-section a {
+            color: #B8B8B8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .footer-section a:hover {
+            color: #D4AF37;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            font-size: 0.9em;
+        }
+        .footer-bottom a {
+            color: #D4AF37;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .tagline { font-size: 1.1em; }
+            .section-title { font-size: 2em; }
+            .cta-section h2 { font-size: 2em; }
+        }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="header">
-        <h1 class="logo">Amor Fati</h1>
-        <p class="tagline">LOVE YOUR FATE, FIND YOUR PLACE</p>
+    <div class="top-bar">
+        📞 <a href="tel:+919988001899">+91-99880-01899</a> | 
+        ✉️ <a href="mailto:afraghav99@gmail.com">afraghav99@gmail.com</a> | 
+        🕒 Mon-Sat: 9:00 AM - 7:00 PM
     </div>
 
-    <div class="action-area">
-        <a href="tel:+91XXXXXXXXXX" class="btn btn-call">📞 Call Now</a>
-        <a href="https://wa.me/91XXXXXXXXXX?text=Hello!%20I'm%20interested%20in%20your%20properties." class="btn btn-wa">💬 WhatsApp Chat</a>
-        <a href="#" class="btn btn-outline">💾 Save Contact</a>
-        <a href="https://instagram.com" class="btn btn-outline">📱 Instagram</a>
-    </div>
+    <header>
+        <div class="logo-section">
+            <h1><span class="af-logo">AF REALTOR</span></h1>
+            <p class="tagline">Where Ambition Meets Excellence in Real Estate</p>
+            <div class="location-badge">Serving North India | Based in Chandigarh Region</div>
+        </div>
+    </header>
 
-    <div class="listings-section">
-        <h3 class="listings-header">Featured Properties</h3>
-        <div class="scroll-container">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400" alt="House">
-                <div class="card-content">
-                    <div class="price">₹4.5 Cr</div>
-                    <div class="loc">Premium Villa, Mumbai</div>
-                    <a href="https://wa.me/91XXXXXXXXXX?text=Details%20on%20Mumbai%20Villa" class="inquiry-link">Inquire →</a>
-                </div>
+    <div class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About AF Realtor</h2>
+                <p>At <span class="highlight">AF Realtor</span>, we bring a unique blend of youthful ambition and unwavering integrity to North India's real estate landscape. Based in the Chandigarh region, we believe that finding the perfect property is not just a transaction—it's a destiny fulfilled.</p>
+                <p>With a foundation built on <span class="highlight">absolute honesty</span> and <span class="highlight">transparent dealings</span>, we've helped countless families and investors discover properties that align perfectly with their dreams and aspirations. Every client relationship is built on trust, every recommendation backed by thorough market knowledge.</p>
+                <p>Whether you're seeking a luxury villa in Chandigarh, a strategic commercial space in Mohali, or an investment opportunity in the thriving markets of North India, we're here to guide you with expertise and genuine care.</p>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400" alt="House">
-                <div class="card-content">
-                    <div class="price">₹1.2 Cr</div>
-                    <div class="loc">Modern Flat, Pune</div>
-                    <a href="https://wa.me/91XXXXXXXXXX?text=Details%20on%20Pune%20Flat" class="inquiry-link">Inquire →</a>
+        </div>
+    </div>
+
+    <div class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3>Residential Sales</h3>
+                    <p>From cozy apartments to luxurious villas, find your dream home across North India's prime locations with expert guidance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Properties</h3>
+                    <p>Strategic office spaces, retail outlets, and commercial complexes in high-growth corridors of Chandigarh and beyond.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Investment Advisory</h3>
+                    <p>Data-driven insights and market intelligence to maximize your real estate investment returns in emerging markets.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌾</div>
+                    <h3>Agricultural Land</h3>
+                    <p>Prime farmland and agricultural plots across Punjab and Haryana with verified documentation and clear titles.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Plot & Land Deals</h3>
+                    <p>Residential and commercial plots in approved colonies with complete legal verification and best market rates.</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-</body>
-</html>
+    <div class="values-section">
+        <div class="container">
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>🎯 Destiny-Driven</h3>
+                    <p>We believe the right property finds you at the right time. Our role is to recognize and facilitate that perfect match.</p>
+                </div>
+                <div class="value-card">
+                    <h3>💎 Absolute Integrity</h3>
+                    <p>100% transparency in every deal. No hidden charges, no misleading information—just honest, straightforward service.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🚀 Ambitious Excellence</h3>
+                    <p>Young, energetic, and driven to exceed expectations in every client interaction and property transaction.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🛡️ Trustworthy Partnership</h3>
+                    <p>Building lifelong relationships through reliability, professionalism, and genuine care for your real estate journey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="coverage-section">
+        <div class="container">
+            <h2 class="section-title">Our Service Area</h2>
+            <div class="coverage-grid">
+                <div class="city-badge">Chandigarh</div>
+                <div class="city-badge">Mohali</div>
+                <div class="city-badge">Panchkula</div>
+                <div class="city-badge">Zirakpur</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Raghav's honesty and market knowledge helped us find our dream home in Mohali within our budget. His dedication is unmatched!</p>
+                    <p class="testimonial-author">— Priya & Arun Sharma</p>
+                    <p class="testimonial-location">Mohali, Punjab</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Best real estate consultant in Chandigarh! No pressure tactics, just genuine advice. Sold our property at the best market rate.</p>
+                    <p class="testimonial-author">— Rajesh Malhotra</p>
+                    <p class="testimonial-location">Chandigarh</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Professional, transparent, and incredibly reliable. Raghav made our commercial property investment seamless and profitable.</p>
+                    <p class="testimonial-author">— Simran Kaur</p>
+                    <p class="testimonial-location">Ludhiana, Punjab</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="container">
+            <h2>Ready to Find Your Perfect Property?</h2>
+            <p>Let's turn your real estate dreams into reality. Connect with Raghav today.</p>
+            <div class="cta-buttons">
+                <a href="tel:+919988001899" class="btn btn-primary">📞 Call Now: +91-99880-01899</a>
+                <a href="mailto:afraghav99@gmail.com" class="btn btn-secondary">✉️ Email Inquiry</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AF Realtor</h3>
+                <p>Your trusted partner in North India real estate since inception.</p>
+                <p><strong>Proprietor:</strong> Raghav</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#coverage">Coverage Area</a>
+                <a href="#testimonials">Testimonials</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 +91-99880-01899</p>
+                <p>✉️ afraghav99@gmail.com</p>
+                <p>📍 Chandigarh Region, Punjab</p>
